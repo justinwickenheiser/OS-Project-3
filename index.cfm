@@ -1,0 +1,1 @@
+<cfInclude template="sb_core.cfm" />
