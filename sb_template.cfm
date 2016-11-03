@@ -3,21 +3,31 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title><cfOutput>#sb.title#</cfOutput></title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<!-- Individual CSS -->
 	<link href="files/css/styles.css" rel="stylesheet" type="text/css" />
+	<!-- Font Awesome -->
+	<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
 </head>
 <body>
 	<div id="wrapper" align="center">
 		<div id="header">
-			<h1><a href="<cfOutput>#sb.func.url("index")#</cfOutput>"><cfOutput>#sb.title#</cfOutput></a></h1>
-			<h2>Powerfully simple (non-OO) MVC framework</h2>
+			<h1><cfOutput>#sb.title#</cfOutput></h1>
 		</div>
 		<div id="body">
 			<cfOutput>#sb.content#</cfOutput>	
 		</div>
 		<div id="footer">
-			<p>
+			<p style="margin: 10px 0px;">
 				<cfOutput>
-					&copy; #year(now())# <a href="#sb.func.url("index")#">#sb.title#</a>
+					&copy; #year(now())# Justin Wickenheiser. All Rights Reserved.
 				</cfOutput>
 			</p>
 		</div>

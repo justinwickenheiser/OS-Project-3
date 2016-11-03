@@ -1,1 +1,0 @@
-<cfSet structClear(session) />

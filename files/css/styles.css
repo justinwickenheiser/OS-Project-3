@@ -1,7 +1,7 @@
 body {
-	margin: 10px;
 	padding: 0;
-	background-color: #FFC;
+	background-color: #202529;
+	color: #656969;
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 #header, #body, #footer {
@@ -9,14 +9,15 @@ body {
 	text-align: left;
 	margin: 0;
 	padding: 10px;
-	border: 10px solid #0099FF;
+	border: 1px solid #fcd088;
 }
 #header {
-	background-color: #0099FF;
+	background-color: #fcd088;
 }
 #header h1, h2 {
 	margin: 0;
 	padding: 0;
+	color: #202529;
 }
 #body {
 	background-color: #FFF;
@@ -27,6 +28,6 @@ body {
 	padding:10px;
 }
 #footer {
-	background-color: #0099FF;
+	background-color: #202529;
 	text-align: center;
 }

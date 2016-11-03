@@ -3,7 +3,7 @@
 <!--- DEVELOPMENT SERVER LIST. SB.ISDEVELOPMENT WILL BE SET IF CGI.HTTP_HOST IS WITHIN THE LIST. --->
 <cfSet sb.developmentServers = "" />
 <!--- THIS VARIABLE IS GLOBAL TO ALL, BUT ONLY REFERENCED ON sb_template.cfm --->
-<cfSet sb.title = "Switchboard Framework" />
+<cfSet sb.title = "The Paging Tutor" />
 <!--- AUTHENTICATION --->
 <cfSet sb.sessionCheck = "" /> <!--- A VALUE SUCH AS "session.user" WOULD BE HERE --->
 <cfSet sb.defaultSessionPath = "" /> <!--- WHERE SWITCHBOARD WILL REDIRECT TO IF SESSIONCHECK IS DEFINED AND THE USER ATTEMPTS TO ACCESS A PAGE THEY *DONT* HAVE TO BE LOGGED INTO --->
