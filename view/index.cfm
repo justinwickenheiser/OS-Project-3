@@ -10,12 +10,32 @@
 	where sizes are given in bytes.
 </p>
 
-<form method="post" action="simulation.htm" enctype="multipart/form-data">
+<p>
+	<strong>System Specs:</strong><br />
+	Physical Memory: 4 KB<br />
+	Page/Frame Size: 512 B<br />
+</p>
+
+<form method="post" action="index_post.htm" enctype="multipart/form-data">
+	<input type="hidden" name="physicalMSizeKB" value="4" />
+	<input type="hidden" name="pageSizeKB" value =".5" />
+
 	<p>
 		<label for="fileUpload">
-			Please upload a trace file <span style="color: red;">*</span>
+			Please select a trace file <span style="color: red;">*</span>
 		</label>
-		<input type="file" name="fileUpload" required="true">
+		<br />
+		<cfOutput>
+			<select name="fileUpload" id="inputFiles" required="true">
+				<option value="">- Please Select</option>
+				<cfLoop array="#variables.inputFiles#" index="i">
+					<!--- The file has .data extension --->
+					<cfIf #find(".data", i)#>
+						<option value="#i#">#getFileFromPath(i)#</option>
+					</cfIf>
+				</cfLoop>
+			</select>
+		</cfOutput>
 	</p>
 	<p>
 		<input type="submit" class="btn btn-primary" value="Submit" />
