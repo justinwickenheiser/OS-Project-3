@@ -18,4 +18,4 @@
 <cfParam name="session.numFrames" default="" />
 
 <!--- Assumed max number of processes in a file --->
-<cfSet variables.maxRecords = 25 />
+<cfSet variables.maxRecords = 24 />

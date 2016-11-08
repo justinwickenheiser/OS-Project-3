@@ -10,10 +10,25 @@
 	<cfSet session.physicalM[i] = "" />
 </cfLoop>
 
+<!--- Create Pages tables --->
+<cfSet session.pageTables = ArrayNew(1) />
+<cfLoop from="1" to="#variables.maxRecords#" index="i">
+	<!--- Build the page table struct --->
+	<cfSet session.pageTables[i] = StructNew() />
+	<cfSet session.pageTables[i].pid = i-1 />
+	<cfSet session.pageTables[i].exists = false />
+	<cfSet session.pageTables[i].segType = ArrayNew(1) />
+	<cfSet session.pageTables[i].page = ArrayNew(1) />
+	<cfSet session.pageTables[i].frame = ArrayNew(1) />
+</cfLoop>
+
 
 <!--- Set mime and path of traces files --->
 <cfSet variables.mime = "text/plain" />
-<cfSet variables.path = "/Library/WebServer/Documents/OSProject3/files/trace" />
+<!--- Path on laptop --->
+<!--- <cfSet variables.path = "/Library/WebServer/Documents/OSProject3/files/trace" /> --->
+<!--- Path at work --->
+<cfSet variables.path = "/Library/WebServer/Documents/www/gvsu/OSProject3/files/trace" />
 
 <cfIf form.fileUpload EQ "">
 	<p>
@@ -61,7 +76,7 @@
 
 <!--- Establish the backup for stepping back through history --->
 <!--- This will be an array of structures --->
-<!--- Each structure will have 2 keys: the array of physical M and an array of structures --->
+<!--- Each structure will have 3 keys: does history exist, the array of physical M, and an array of structures --->
 <!--- Those arrays of structures will be the Page Tables --->
 
 <!--- create array of structures (one for each trace line) --->
@@ -77,10 +92,11 @@
 	<cfLoop from="1" to="#variables.maxRecords#" index="j">
 		<!--- Build the page table struct --->
 		<cfSet session.history[i].pageTables[j] = StructNew() />
-		<cfSet session.history[i].pageTables[j].pid = j />
-		<cfSet session.history[i].pageTables[j].segType = "" />
-		<cfSet session.history[i].pageTables[j].page = "" />
-		<cfSet session.history[i].pageTables[j].frame = "" />
+		<cfSet session.history[i].pageTables[j].pid = j-1 />
+		<cfSet session.history[i].pageTables[j].exists = false />
+		<cfSet session.history[i].pageTables[j].segType = ArrayNew(1) />
+		<cfSet session.history[i].pageTables[j].page = ArrayNew(1) />
+		<cfSet session.history[i].pageTables[j].frame = ArrayNew(1) />
 	</cfLoop>
 </cfLoop>
 <!--- End of backup establishment --->

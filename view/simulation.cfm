@@ -1,4 +1,4 @@
-<h2>Simulator Running</h2>
+<h2>Simulation Running</h2>
 <br />
 
 <!--- Add next and back buttons that only appear when they logically make sense to --->
@@ -130,6 +130,101 @@
 	</div>
 </div>
 
+<cfIf variables.numPageTables NEQ 0>
+	<h3>Page Tables</h3>
+	<!--- Show Page Tables --->
+	<cfLoop from="1" to="#variables.numPageTables/2#" index="i">
+		
+		<div class="row">
+			<!--- Left column --->
+			<div class="col-md-6">
+				<h4>
+					PID <cfOutput>#session.pageTables[variables.existingPageTables].pid#</cfOutput>
+				</h4>
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Frame</th>
+							<th>Segment Type</th>
+							<th>Page</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!--- Loop over the array of pages --->
+						<cfLoop from="1" to="#ArrayLen(session.pageTables[variables.existingPageTables[variables.page]].page)#" index="j">
+							<tr>
+								
+								<td>
+									<cfOutput>
+										#session.pageTables[variables.existingPageTables[variables.page]].frame[j]#
+									</cfOutput>
+								</td>
+								<td>
+									<cfOutput>
+										#session.pageTables[variables.existingPageTables[variables.page]].segType[j]#
+									</cfOutput>
+								</td>
+								<td>
+									<cfOutput>
+										#session.pageTables[variables.existingPageTables[variables.page]].page[j]#
+									</cfOutput>
+								</td>
+							</tr>
+						</cfLoop>
+					</tbody>
+				</table>
+
+				<cfSet variables.page += 1 />
+			</div>
+
+			<!--- Left column --->
+			<!--- Only display if the table exists --->
+			<cfIf variables.page LTE ArrayLen(variables.existingPageTables)>
+				<div class="col-md-6">
+					<h4>
+						PID <cfOutput>#session.pageTables[variables.existingPageTables].pid#</cfOutput>
+					</h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Frame</th>
+								<th>Segment Type</th>
+								<th>Page</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!--- Loop over the array of pages --->
+							<cfLoop from="1" to="#ArrayLen(session.pageTables[variables.existingPageTables[variables.page]].page)#" index="j">
+								<tr>
+									
+									<td>
+										<cfOutput>
+											#session.pageTables[variables.existingPageTables[variables.page]].frame[j]#
+										</cfOutput>
+									</td>
+									<td>
+										<cfOutput>
+											#session.pageTables[variables.existingPageTables[variables.page]].segType[j]#
+										</cfOutput>
+									</td>
+									<td>
+										<cfOutput>
+											#session.pageTables[variables.existingPageTables[variables.page]].page[j]#
+										</cfOutput>
+									</td>
+								</tr>
+							</cfLoop>
+						</tbody>
+					</table>
+
+					<cfSet variables.page += 1 />
+				</div>
+			</cfIf>
+		</div>
+	</cfLoop>
+</cfIf>
 
 <!--- Add next and back buttons that only appear when they logically make sense to --->
 <p style="text-align: center;">
