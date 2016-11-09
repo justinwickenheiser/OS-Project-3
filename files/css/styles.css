@@ -1,3 +1,4 @@
+/* Framework styles */
 body {
 	padding: 0;
 	background-color: #202529;
@@ -30,4 +31,85 @@ body {
 #footer {
 	background-color: #202529;
 	text-align: center;
+}
+
+/* Page Tutor Styles */
+.currentLine {
+	background-color: #7FFFD4;
+}
+
+.p0 {
+	background-color: #AA8FC6;
+}
+.p1 {
+	background-color: #7FFFF4;
+}
+.p2 {
+	background-color: #5F9EA0;
+}
+.p3 {
+	background-color: #FF4310;
+}
+.p4 {
+	background-color: #FFE4B5;
+}
+.p5 {
+	background-color: #DDA0DD;
+}
+.p6 {
+	background-color: #F5F5F5;
+}
+.p7 {
+	background-color: #A7CCEC;
+}
+.p8 {
+	background-color: #E0ECA7;
+}
+.p9 {
+	background-color: #ECC0A7;
+}
+.p10 {
+	background-color: #D7C0DE;
+}
+.p11 {
+	background-color: #A1EDDC;
+}
+.p12 {
+	background-color: #A1D1ED;
+}
+.p13 {
+	background-color: #5BA8D5;
+}
+.p14 {
+	background-color: #5BD1D5;
+}
+.p15 {
+	background-color: #96DF7B;
+}
+.p16 {
+	background-color: #C8DF7B;
+}
+.p17 {
+	background-color: #DFD27B;
+}
+.p18 {
+	background-color: #01E99C;
+}
+.p19 {
+	background-color: #F78AFE;
+}
+.p20 {
+	background-color: #FE8AD4;
+}
+.p21 {
+	background-color: #D55D91;
+}
+.p22 {
+	background-color: #66EC92;
+}
+.p23 {
+	background-color: #DCD618;
+}
+.p24 {
+	background-color: #E16B6B;
 }

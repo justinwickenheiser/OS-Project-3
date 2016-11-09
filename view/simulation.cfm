@@ -46,7 +46,7 @@
 							Frame <cfOutput>#i-1#</cfOutput>
 						</td>
 						<!--- What is stored in this frame of memory --->
-						<td>
+						<td <cfIf session.physicalM[i] NEQ "">class="<cfOutput>#lCase(mid(session.physicalM[i],1,2))#</cfOutput>"</cfIf> >
 							<cfOutput>#session.physicalM[i]#</cfOutput>
 						</td>
 					</tr>
@@ -78,7 +78,7 @@
 						</cfIf>
 					</td>
 				</tr>
-				<tr>
+				<tr class="currentLine">
 					<th>Current Line</th>
 					<td>
 						<cfIf url.step EQ 0>
@@ -138,7 +138,7 @@
 		<div class="row">
 			<!--- Left column --->
 			<div class="col-md-6">
-				<h4>
+				<h4 class="p<cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>">
 					PID <cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>
 				</h4>
 				
@@ -182,7 +182,7 @@
 			<!--- Only display if the table exists --->
 			<cfIf variables.page LTE variables.numPageTables>
 				<div class="col-md-6">
-					<h4>
+					<h4 class="p<cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>" >
 						PID <cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>
 					</h4>
 					
