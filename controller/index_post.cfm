@@ -26,9 +26,9 @@
 <!--- Set mime and path of traces files --->
 <cfSet variables.mime = "text/plain" />
 <!--- Path on laptop --->
-<!--- <cfSet variables.path = "/Library/WebServer/Documents/OSProject3/files/trace" /> --->
+<cfSet variables.path = "/Library/WebServer/Documents/OSProject3/files/trace" />
 <!--- Path at work --->
-<cfSet variables.path = "/Library/WebServer/Documents/www/gvsu/OSProject3/files/trace" />
+<!--- <cfSet variables.path = "/Library/WebServer/Documents/www/gvsu/OSProject3/files/trace" /> --->
 
 <cfIf form.fileUpload EQ "">
 	<p>

@@ -133,13 +133,13 @@
 <cfIf variables.numPageTables NEQ 0>
 	<h3>Page Tables</h3>
 	<!--- Show Page Tables --->
-	<cfLoop from="1" to="#variables.numPageTables/2#" index="i">
+	<cfLoop from="1" to="#variables.numRows#" index="i">
 		
 		<div class="row">
 			<!--- Left column --->
 			<div class="col-md-6">
 				<h4>
-					PID <cfOutput>#session.pageTables[variables.existingPageTables].pid#</cfOutput>
+					PID <cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>
 				</h4>
 				
 				<table class="table">
@@ -178,12 +178,12 @@
 				<cfSet variables.page += 1 />
 			</div>
 
-			<!--- Left column --->
+			<!--- Right column --->
 			<!--- Only display if the table exists --->
-			<cfIf variables.page LTE ArrayLen(variables.existingPageTables)>
+			<cfIf variables.page LTE variables.numPageTables>
 				<div class="col-md-6">
 					<h4>
-						PID <cfOutput>#session.pageTables[variables.existingPageTables].pid#</cfOutput>
+						PID <cfOutput>#session.pageTables[variables.existingPageTables[variables.page]].pid#</cfOutput>
 					</h4>
 					
 					<table class="table">

@@ -42,7 +42,7 @@
 					<cfSet session.pageTables[variables.pid+1].exists = true />
 					<cfSet session.pageTables[variables.pid+1].segType[varaibles.pTablePositionCounter] = "Text" />
 					<cfSet session.pageTables[variables.pid+1].page[varaibles.pTablePositionCounter] = i />
-					<cfSet session.pageTables[variables.pid+1].frame[varaibles.pTablePositionCounter] = j />
+					<cfSet session.pageTables[variables.pid+1].frame[varaibles.pTablePositionCounter] = j-1 />
 
 					<!--- Now that the position for the mapping has been used up,
 						increment to next position --->
@@ -65,7 +65,7 @@
 					<cfSet session.pageTables[variables.pid+1].exists = true />
 					<cfSet session.pageTables[variables.pid+1].segType[varaibles.pTablePositionCounter] = "Data" />
 					<cfSet session.pageTables[variables.pid+1].page[varaibles.pTablePositionCounter] = i />
-					<cfSet session.pageTables[variables.pid+1].frame[varaibles.pTablePositionCounter] = j />
+					<cfSet session.pageTables[variables.pid+1].frame[varaibles.pTablePositionCounter] = j-1 />
 
 					<!--- Now that the position for the mapping has been used up,
 						increment to next position --->
